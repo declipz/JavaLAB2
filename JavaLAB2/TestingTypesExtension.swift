@@ -8,20 +8,22 @@
 
 import Foundation
 
-extension Int: ThrowingTestable { }
-extension Float: ThrowingTestable { }
-extension Double: ThrowingTestable { }
-extension String: ThrowingTestable {
-    static func - (lhs: String, rhs: String) -> String {
+extension String: ThrowingTestableBinaryArithmetic {
+    static func - (lhs: String, rhs: String) throws -> String {
         throw TestingError.arithmeticalError
     }
     
-    static func * (lhs: String, rhs: String) -> String {
+    static func * (lhs: String, rhs: String) throws -> String {
         throw TestingError.arithmeticalError
     }
     
-    static func / (lhs: String, rhs: String) -> String {
+    static func / (lhs: String, rhs: String) throws -> String {
         throw TestingError.arithmeticalError
     }
+    
+    static func % (lhs: String, rhs: String) throws -> String {
+        throw TestingError.arithmeticalError
+    }
+    
+    
 }
-extension Bool: Testable { }

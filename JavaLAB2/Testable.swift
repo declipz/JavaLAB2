@@ -8,24 +8,29 @@
 
 import Foundation
 
-protocol Testable {
-    // Binary arithmetical operators
+protocol TestableBinaryArithmetic {
     static func + (lhs: Self, rhs: Self) -> Self
     static func - (lhs: Self, rhs: Self) -> Self
     static func * (lhs: Self, rhs: Self) -> Self
     static func / (lhs: Self, rhs: Self) -> Self
     static func % (lhs: Self, rhs: Self) -> Self
-    // Unary arithmetical operators
+}
+
+protocol TestableUnaryArithmetics {
     static prefix func - (_ operand: Self) -> Self
     static prefix func + (_ operand: Self) -> Self
-    // Bitwise operators
+}
+
+protocol TestableBitwise {
     static func & (lhs: Self, rhs: Self) -> Self
     static func | (lhs: Self, rhs: Self) -> Self
     static func ^ (lhs: Self, rhs: Self) -> Self
     static prefix func ~(_ operand: Self) -> Self
     static func >> <RHS: BinaryInteger>(lhs: Self, rhs: RHS) -> Self
     static func << <RHS: BinaryInteger>(lhs: Self, rhs: RHS) -> Self
-    // Assignment operators
+}
+
+protocol TestableAssignment {
     static func += (lhs: inout Self, rhs: Self)
     static func -= (lhs: inout Self, rhs: Self)
     static func *= (lhs: inout Self, rhs: Self)
@@ -36,10 +41,20 @@ protocol Testable {
     static func ^= (lhs: inout Self, rhs: Self)
     static func >>= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS)
     static func <<= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS)
-    // Comparing operators
+}
+
+protocol TestableComparing {
     static func != (lhs: Self, rhs: Self) -> Bool
     static func <= (lhs: Self, rhs: Self) -> Bool
     static func >= (lhs: Self, rhs: Self) -> Bool
     static func > (lhs: Self, rhs: Self) -> Bool
+}
+
+protocol Testable {
+    // Binary arithmetical operators
+    // Unary arithmetical operators
+    // Bitwise operators
+    // Assignment operators
+    // Comparing operators
     
 }

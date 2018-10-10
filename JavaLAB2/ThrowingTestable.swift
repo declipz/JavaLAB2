@@ -8,72 +8,52 @@
 
 import Foundation
 
-protocol ThrowingTestable {
-    // Binary arithmetical operators
+protocol ThrowingTestableBinaryArithmetic {
     static func + (lhs: Self, rhs: Self) throws -> Self
     static func - (lhs: Self, rhs: Self) throws -> Self
     static func * (lhs: Self, rhs: Self) throws -> Self
     static func / (lhs: Self, rhs: Self) throws -> Self
     static func % (lhs: Self, rhs: Self) throws -> Self
-    // Unary arithmetical operators
-    static prefix func - (_ operand: Self) throws -> Self
-    static prefix func + (_ operand: Self) throws -> Self
-    // Bitwise operators
-    static func & (lhs: Self, rhs: Self) throws -> Self
-    static func | (lhs: Self, rhs: Self) throws -> Self
-    static func ^ (lhs: Self, rhs: Self) throws -> Self
-    static prefix func ~(_ operand: Self) throws -> Self
-    static func >> <RHS: BinaryInteger>(lhs: Self, rhs: RHS) throws -> Self
-    static func << <RHS: BinaryInteger>(lhs: Self, rhs: RHS) throws -> Self
-    // Assignment operators
-    static func += (lhs: inout Self, rhs: Self) throws
-    static func -= (lhs: inout Self, rhs: Self) throws
-    static func *= (lhs: inout Self, rhs: Self) throws
-    static func /= (lhs: inout Self, rhs: Self) throws
-    static func %= (lhs: inout Self, rhs: Self) throws
-    static func &= (lhs: inout Self, rhs: Self) throws
-    static func |= (lhs: inout Self, rhs: Self) throws
-    static func ^= (lhs: inout Self, rhs: Self) throws
-    static func >>= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS) throws
-    static func <<= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS) throws
-    // Comparing operators
-    static func != (lhs: Self, rhs: Self) throws -> Bool
-    static func <= (lhs: Self, rhs: Self) throws -> Bool
-    static func >= (lhs: Self, rhs: Self) throws -> Bool
-    static func > (lhs: Self, rhs: Self) throws  -> Bool
 }
 
-extension ThrowingTestable where Self: Testable {
-    // Binary arithmetical operators
+protocol ThrowingTestableUnaryArithmetics {
+    static prefix func - (_ operand: Self) -> Self
+    static prefix func + (_ operand: Self) -> Self
+}
+
+protocol ThrowingTestableBitwise {
+    static func & (lhs: Self, rhs: Self) -> Self
+    static func | (lhs: Self, rhs: Self) -> Self
+    static func ^ (lhs: Self, rhs: Self) -> Self
+    static prefix func ~(_ operand: Self) -> Self
+    static func >> <RHS: BinaryInteger>(lhs: Self, rhs: RHS) -> Self
+    static func << <RHS: BinaryInteger>(lhs: Self, rhs: RHS) -> Self
+}
+
+protocol ThrowingTestableAssignment {
+    static func += (lhs: inout Self, rhs: Self)
+    static func -= (lhs: inout Self, rhs: Self)
+    static func *= (lhs: inout Self, rhs: Self)
+    static func /= (lhs: inout Self, rhs: Self)
+    static func %= (lhs: inout Self, rhs: Self)
+    static func &= (lhs: inout Self, rhs: Self)
+    static func |= (lhs: inout Self, rhs: Self)
+    static func ^= (lhs: inout Self, rhs: Self)
+    static func >>= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS)
+    static func <<= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS)
+}
+
+protocol ThrowingTestableComparing {
+    static func != (lhs: Self, rhs: Self) -> Bool
+    static func <= (lhs: Self, rhs: Self) -> Bool
+    static func >= (lhs: Self, rhs: Self) -> Bool
+    static func > (lhs: Self, rhs: Self) -> Bool
+}
+
+extension ThrowingTestableBinaryArithmetic where Self: TestableBinaryArithmetic {
     static func + (lhs: Self, rhs: Self) throws -> Self { return lhs + rhs }
     static func - (lhs: Self, rhs: Self) throws -> Self { return lhs - rhs }
     static func * (lhs: Self, rhs: Self) throws -> Self { return lhs * rhs }
     static func / (lhs: Self, rhs: Self) throws -> Self { return lhs / rhs }
     static func % (lhs: Self, rhs: Self) throws -> Self { return lhs % rhs }
-    // Unary arithmetical operators
-    static prefix func - (_ operand: Self) throws -> Self { return -operand }
-    static prefix func + (_ operand: Self) throws -> Self { return +operand }
-    // Bitwise operators
-    static func & (lhs: Self, rhs: Self) throws -> Self { return lhs & rhs }
-    static func | (lhs: Self, rhs: Self) throws -> Self
-    static func ^ (lhs: Self, rhs: Self) throws -> Self
-    static prefix func ~(_ operand: Self) throws -> Self
-    static func >> <RHS: BinaryInteger>(lhs: Self, rhs: RHS) throws -> Self
-    static func << <RHS: BinaryInteger>(lhs: Self, rhs: RHS) throws -> Self
-    // Assignment operators
-    static func += (lhs: inout Self, rhs: Self) throws
-    static func -= (lhs: inout Self, rhs: Self) throws
-    static func *= (lhs: inout Self, rhs: Self) throws
-    static func /= (lhs: inout Self, rhs: Self) throws
-    static func %= (lhs: inout Self, rhs: Self) throws
-    static func &= (lhs: inout Self, rhs: Self) throws
-    static func |= (lhs: inout Self, rhs: Self) throws
-    static func ^= (lhs: inout Self, rhs: Self) throws
-    static func >>= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS) throws
-    static func <<= <RHS: BinaryInteger>(lhs: inout Self, rhs: RHS) throws
-    // Comparing operators
-    static func != (lhs: Self, rhs: Self) throws -> Bool
-    static func <= (lhs: Self, rhs: Self) throws -> Bool
-    static func >= (lhs: Self, rhs: Self) throws -> Bool
-    static func > (lhs: Self, rhs: Self) throws  -> Bool
 }
