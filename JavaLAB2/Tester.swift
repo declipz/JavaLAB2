@@ -9,6 +9,18 @@
 import Foundation
 
 class Tester {
+    func testType<T>(firstObject a: T, secondObject b: T) where T: ThrowingTestable {
+        do {
+            print(try a + b)
+            print(try a - b)
+            print(try a * b)
+            print(try a / b)
+            print(try a % b)
+        } catch {
+            print(error)
+        }
+    }
+
     func testInt() {
         var firstObject: Int = 7
         let secondObject: Int = 2
