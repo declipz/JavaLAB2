@@ -11,15 +11,7 @@ import Foundation
 class Application {
     func start() {
         let tester = Tester()
-        tester.testBinaryArithmetic(firstObject: "foo", secondObject: "bar")
-        //let tester = Tester()
-        
-        //tester.testInt()
-        //tester.testDouble()
-        //tester.testString()
-        
-        
-    
+        tester.testType(firstObject: "foo", secondObject: "bar")
     }
 }
 

@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		D658E4B6216CD5C500FB80F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D658E4B5216CD5C500FB80F5 /* main.swift */; };
 		D658E4BD216CD5E200FB80F5 /* Tester.swift in Sources */ = {isa = PBXBuildFile; fileRef = D658E4BC216CD5E200FB80F5 /* Tester.swift */; };
-		D6C9B19F216E726000D46BE2 /* Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9B19E216E726000D46BE2 /* Testable.swift */; };
-		D6C9B1A1216E77D300D46BE2 /* TestingTypesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9B1A0216E77D300D46BE2 /* TestingTypesExtension.swift */; };
-		D6C9B1A3216E845000D46BE2 /* ThrowingTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9B1A2216E845000D46BE2 /* ThrowingTestable.swift */; };
+		D6780328216F33EA00C342A8 /* TestableUnaryArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6780327216F33EA00C342A8 /* TestableUnaryArithmetic.swift */; };
+		D678032A216F355E00C342A8 /* TestableBitwise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6780329216F355E00C342A8 /* TestableBitwise.swift */; };
+		D678032C216F35EC00C342A8 /* TestableAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D678032B216F35EC00C342A8 /* TestableAssignment.swift */; };
+		D678032E216F367600C342A8 /* TestableComparing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D678032D216F367600C342A8 /* TestableComparing.swift */; };
 		D6C9B1A5216E8D8900D46BE2 /* TestingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9B1A4216E8D8900D46BE2 /* TestingError.swift */; };
+		D6C9B1C0216EA00700D46BE2 /* TestableBinaryArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9B1BF216EA00700D46BE2 /* TestableBinaryArithmetic.swift */; };
+		D6C9B1C4216EA06C00D46BE2 /* TestableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9B1C3216EA06C00D46BE2 /* TestableString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,10 +34,13 @@
 		D658E4B2216CD5C500FB80F5 /* JavaLAB2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = JavaLAB2; sourceTree = BUILT_PRODUCTS_DIR; };
 		D658E4B5216CD5C500FB80F5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D658E4BC216CD5E200FB80F5 /* Tester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tester.swift; sourceTree = "<group>"; };
-		D6C9B19E216E726000D46BE2 /* Testable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testable.swift; sourceTree = "<group>"; };
-		D6C9B1A0216E77D300D46BE2 /* TestingTypesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTypesExtension.swift; sourceTree = "<group>"; };
-		D6C9B1A2216E845000D46BE2 /* ThrowingTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowingTestable.swift; sourceTree = "<group>"; };
+		D6780327216F33EA00C342A8 /* TestableUnaryArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableUnaryArithmetic.swift; sourceTree = "<group>"; };
+		D6780329216F355E00C342A8 /* TestableBitwise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableBitwise.swift; sourceTree = "<group>"; };
+		D678032B216F35EC00C342A8 /* TestableAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableAssignment.swift; sourceTree = "<group>"; };
+		D678032D216F367600C342A8 /* TestableComparing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableComparing.swift; sourceTree = "<group>"; };
 		D6C9B1A4216E8D8900D46BE2 /* TestingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingError.swift; sourceTree = "<group>"; };
+		D6C9B1BF216EA00700D46BE2 /* TestableBinaryArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableBinaryArithmetic.swift; sourceTree = "<group>"; };
+		D6C9B1C3216EA06C00D46BE2 /* TestableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +73,33 @@
 		D658E4B4216CD5C500FB80F5 /* JavaLAB2 */ = {
 			isa = PBXGroup;
 			children = (
+				D6C9B1C1216EA03700D46BE2 /* DataTypeExtensions */,
+				D6C9B1BD216E9FA800D46BE2 /* Tester */,
 				D658E4B5216CD5C500FB80F5 /* main.swift */,
-				D658E4BC216CD5E200FB80F5 /* Tester.swift */,
-				D6C9B19E216E726000D46BE2 /* Testable.swift */,
-				D6C9B1A0216E77D300D46BE2 /* TestingTypesExtension.swift */,
-				D6C9B1A2216E845000D46BE2 /* ThrowingTestable.swift */,
-				D6C9B1A4216E8D8900D46BE2 /* TestingError.swift */,
 			);
 			path = JavaLAB2;
+			sourceTree = "<group>";
+		};
+		D6C9B1BD216E9FA800D46BE2 /* Tester */ = {
+			isa = PBXGroup;
+			children = (
+				D658E4BC216CD5E200FB80F5 /* Tester.swift */,
+				D6C9B1A4216E8D8900D46BE2 /* TestingError.swift */,
+				D6C9B1BF216EA00700D46BE2 /* TestableBinaryArithmetic.swift */,
+				D6780327216F33EA00C342A8 /* TestableUnaryArithmetic.swift */,
+				D6780329216F355E00C342A8 /* TestableBitwise.swift */,
+				D678032B216F35EC00C342A8 /* TestableAssignment.swift */,
+				D678032D216F367600C342A8 /* TestableComparing.swift */,
+			);
+			path = Tester;
+			sourceTree = "<group>";
+		};
+		D6C9B1C1216EA03700D46BE2 /* DataTypeExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				D6C9B1C3216EA06C00D46BE2 /* TestableString.swift */,
+			);
+			path = DataTypeExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,12 +159,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C9B1A3216E845000D46BE2 /* ThrowingTestable.swift in Sources */,
+				D6C9B1C0216EA00700D46BE2 /* TestableBinaryArithmetic.swift in Sources */,
+				D6C9B1C4216EA06C00D46BE2 /* TestableString.swift in Sources */,
 				D658E4BD216CD5E200FB80F5 /* Tester.swift in Sources */,
+				D678032C216F35EC00C342A8 /* TestableAssignment.swift in Sources */,
+				D678032E216F367600C342A8 /* TestableComparing.swift in Sources */,
+				D678032A216F355E00C342A8 /* TestableBitwise.swift in Sources */,
 				D658E4B6216CD5C500FB80F5 /* main.swift in Sources */,
+				D6780328216F33EA00C342A8 /* TestableUnaryArithmetic.swift in Sources */,
 				D6C9B1A5216E8D8900D46BE2 /* TestingError.swift in Sources */,
-				D6C9B1A1216E77D300D46BE2 /* TestingTypesExtension.swift in Sources */,
-				D6C9B19F216E726000D46BE2 /* Testable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
