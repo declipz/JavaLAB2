@@ -59,13 +59,19 @@ class Tester {
     func testAssignment<T>(firstObject a: T, secondObject b: T) where T: ThrowingTestableAssignment {
         print(" Assignment:")
         var mutableA: T = a
-        run(try mutableA += b).map { print("\(mutableA) += \(b) // \(mutableA)") }
-        run(try mutableA -= b).map { print("\(mutableA) -= \(b) // \(mutableA)") }
-        run(try mutableA *= b).map { print("\(mutableA) *= \(b) // \(mutableA)") }
-        run(try mutableA /= b).map { print("\(mutableA) /= \(b) // \(mutableA)") }
-        run(try mutableA %= b).map { print("\(mutableA) %= \(b) // \(mutableA)") }
-        run(try mutableA &= b).map { print("\(mutableA) &= \(b) // \(mutableA)") }
-        run(try mutableA ^= b).map { print("\(mutableA) ^= \(b) // \(mutableA)") }
+        run(try mutableA += b).map { print("\(a) += \(b) // \(mutableA)") }
+        mutableA = a
+        run(try mutableA -= b).map { print("\(a) -= \(b) // \(mutableA)") }
+        mutableA = a
+        run(try mutableA *= b).map { print("\(a) *= \(b) // \(mutableA)") }
+        mutableA = a
+        run(try mutableA /= b).map { print("\(a) /= \(b) // \(mutableA)") }
+        mutableA = a
+        run(try mutableA %= b).map { print("\(a) %= \(b) // \(mutableA)") }
+        mutableA = a
+        run(try mutableA &= b).map { print("\(a) &= \(b) // \(mutableA)") }
+        mutableA = a
+        run(try mutableA ^= b).map { print("\(a) ^= \(b) // \(mutableA)") }
     }
     
     func testComparing<T>(firstObject a: T, secondObject b: T) where T: ThrowingTestableComparing {
